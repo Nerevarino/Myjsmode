@@ -132,7 +132,7 @@
 
 
 
-(defun mjs-ca()
+(defun mjs-cas()
   ""
   (interactive)
   
@@ -153,6 +153,189 @@
 )
 
 
+
+(defun mjs-wi()
+  ""
+  (interactive)
+  
+  (let
+    (
+      textStrings
+    )
+    (setq textStrings ;предварительный список строк
+      (list
+        "with(){"
+        (make-string tab-width ?\ )
+        "}"
+      )
+    )
+    (melm-common-procedure-and-print textStrings)
+    (previous-line 2)
+    (right-char 4)
+  )
+)
+
+
+
+(defun mjs-tr()
+  ""
+  (interactive)
+  
+  (let
+    (
+      textStrings
+    )
+    (setq textStrings ;предварительный список строк
+      (list
+        "try{"
+        (make-string tab-width ?\ )
+        "}"
+      )
+    )
+    (melm-common-procedure-and-print textStrings)
+    (previous-line)
+    (right-char (- tab-width 1))
+  )
+)
+
+
+
+(defun mjs-cat()
+  ""
+  (interactive)
+  
+  (let
+    (
+      textStrings
+    )
+    (setq textStrings ;предварительный список строк
+      (list
+        "catch(){"
+        (make-string tab-width ?\ )
+        "}"
+      )
+    )
+    (melm-common-procedure-and-print textStrings)
+    (previous-line 2)
+    (right-char 5)
+  )
+)
+
+
+
+
+(defun mjs-fi()
+  ""
+  (interactive)
+  
+  (let
+    (
+      textStrings
+    )
+    (setq textStrings ;предварительный список строк
+      (list
+        "finally{"
+        (make-string tab-width ?\ )
+        "}"
+      )
+    )
+    (melm-common-procedure-and-print textStrings)
+    (previous-line)
+    (right-char (- tab-width 1))
+  )
+)
+
+
+
+(defun mjs-fo()
+  ""
+  (interactive)
+  
+  (let
+    (
+      textStrings
+    )
+    (setq textStrings ;предварительный список строк
+      (list
+        "for( ; ; ){"
+        (make-string tab-width ?\ )
+        "}"
+      )
+    )
+    (melm-common-procedure-and-print textStrings)
+    (previous-line 2)
+    (right-char 4)
+  )
+)
+
+
+
+(defun mjs-func(name signature)
+  ""
+  (interactive "sfunction name: \nssignature: ")
+  
+  (let
+    (
+      textStrings
+    )
+    (setq textStrings ;предварительный список строк
+      (list
+        (concat "function " name "(" signature ")")
+        "{"
+        (make-string tab-width ?\ )
+        "}"
+      )
+    )
+    (melm-common-procedure-and-print textStrings)
+    (previous-line 1)
+    (right-char (- tab-width 1))
+  )
+)
+
+
+
+(defun mjs-while()
+  ""
+  (interactive)
+  
+  (let
+    (
+      textStrings
+    )
+    (setq textStrings ;предварительный список строк
+      (list
+        "while(){"
+        (make-string tab-width ?\ )
+        "}"
+      )
+    )
+    (melm-common-procedure-and-print textStrings)
+    (previous-line 2)
+    (right-char 5)
+  )
+)
+
+
+
+(defun mjs-dowhile()
+  ""
+  (interactive)
+  
+  (let
+    (
+      textStrings
+    )
+    (setq textStrings ;предварительный список строк
+      (list
+        "do{"
+        (make-string tab-width ?\ )
+        "}while();"
+      )
+    )
+    (melm-common-procedure-and-print textStrings)
+    (left-char 2)
+  )
+)
 
 
 
